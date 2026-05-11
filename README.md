@@ -1,233 +1,85 @@
-# h1 Heading 8-)
-## h2 Heading :)
-### h3 hi  :o:
-#### h4 repo
-##### h5 rdrr
-###### h6 asas
+# Crispy
 
+## Overview
 
-## Horizontal Rules
+`crispy` is a minimal, file-based C# console app that runs directly from a single `prog.cs` script using the `dotnet` CLI (no `.sln`/`.csproj` required).
 
-___
+The current program demonstrates:
+- Colored terminal output
+- Interactive user input
+- A simple status spinner
+- Calendar rendering
 
----
+## Stack
 
-***
+- **Language:** C# (`.NET` file-based app style)
+- **Runtime/SDK:** `.NET` (environment indicates `net10.0` availability)
+- **Framework type:** C[README.md](README.md)onsole application
+- **Primary library:** `Spectre.Console` (`#:package Spectre.Console@0.53.0` in `prog.cs`)
+- **Package acquisition:** Inline NuGet package directive in source (resolved by `dotnet` when running script)
+- **Package manager:** NuGet via `dotnet`
 
+## Requirements
 
-## Typographic replacements
+- `dotnet` SDK installed and available in `PATH`
+- A terminal that supports UTF-8/ANSI output (recommended for best Spectre.Console rendering)
 
-Enable typographer option to see result.
+> TODO: Confirm and document the minimum required `dotnet` SDK version for this script.
 
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+## Entry Point
 
-test.. test... test..... test?..... test!....
+- `prog.cs` (script-style executable C# file)
+- Shebang: `#!/usr/bin/env dotnet`
 
-!!!!!! ???? ,,  -- ---
+## Setup & Run
 
-"Smartypants, double quotes" and 'single quotes'
+No project restore/build step is required beforehand for this single-file setup.
 
+Run from repo root:
 
-## Emphasis
-
-**This is bold text**
-
-__This is bold text__
-
-*This is italic text*
-
-_This is italic text_
-
-~~Strikethrough~~
-
-
-## Blockquotes
-
-
-> Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
-> > > ...or with spaces between arrows.
-
-
-## Lists
-
-Unordered
-
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
-    + Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-+ Very easy!
-
-Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-
-1. You can use sequential numbers...
-1. ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-1. bar
-
-
-## Code
-
-Inline `code`
-
-Indented code
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-
-Block code "fences"
-
-```
-Sample text here...
+```bash
+dotnet run prog.cs
 ```
 
-Syntax highlighting
+You can also run it as an executable script on Unix-like systems (if executable permission is set):
 
-``` js
-var foo = function (bar) {
-  return bar++;
-};
-
-console.log(foo(5));
+```bash
+./prog.cs
 ```
 
-## Tables
+## Scripts
 
-| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+There is currently no dedicated scripts manifest (for example, no `package.json`, `Makefile`, or custom task runner config).
 
-Right aligned columns
+Available command:
+- `dotnet run prog.cs` — execute the application.
 
-| Option | Description |
-| ------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+## Environment Variables
 
+No project-specific environment variables are currently defined.
 
-## Links
+> TODO: Add environment variable documentation if configuration is introduced.
 
-[link text](http://dev.nodeca.com)
+## Tests
 
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
+No **_automated_** test project/files are currently present in this repository.
 
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
+> TODO: Add tests if/when non-trivial business logic is introduced.
 
+## Project Structure
 
-## Images
+```text
+.
+├── prog.cs           # Main file-based C# program (entry point)
+├── LICENSE           # Mozilla Public License 2.0
+├── README.md         # Project documentation
+├── Empty File        # Misc file (purpose currently undocumented)
+├── Text File.txt     # Misc file (purpose currently undocumented)
+└── Folder.DotSettings.user
+```
 
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+> TODO: Clarify whether `Empty File`, `Text File.txt`, and `Folder.DotSettings.user` are intentional project artifacts.
 
-Like links, Images also have a footnote style syntax
+## License
 
-![Alt text][id]
-
-With a reference later in the document defining the URL location:
-
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
-
-
-## Plugins
-
-The killer feature of `markdown-it` is very effective support of
-[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
-
-
-### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
-
-> Classic markup: :wink: :cry: :laughing: :yum:
->
-> Shortcuts (emoticons): :-) :-( 8-) ;)
-
-see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
-
-
-### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
-
-- 19^th^
-- H~2~O
-
-
-### [\<ins>](https://github.com/markdown-it/markdown-it-ins)
-
-++Inserted text++
-
-
-### [\<mark>](https://github.com/markdown-it/markdown-it-mark)
-
-==Marked text==
-
-
-### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
-
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Inline footnote^[Text of inline footnote] definition.
-
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: تجربة الحاشية
-
-
-### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
-
-Term 1
-
-:   Definition 1
-with lazy continuation.
-
-Term 2 with *inline markup*
-
-:   Definition 2
-
-        { some code, part of Definition 2 }
-
-    Third paragraph of definition 2.
-
-_Compact style:_
-
-Term 1
-  ~ Definition 1
-
-Term 2
-  ~ Definition 2a
-  ~ Definition 2b
-
-
-### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
-
-This is HTML abbreviation example.
-
-It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
-
-*[HTML]: Hyper Text Markup Language
-
-### [Custom containers](https://github.com/markdown-it/markdown-it-container)
-
-::: warning
-*here be dragons*
-:::
+This repository is licensed under the **Mozilla Public License 2.0**. See [`LICENSE`](./LICENSE).
